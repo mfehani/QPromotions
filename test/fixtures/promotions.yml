@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  discount: 1
+  branch: MyString
+  category: MyString
+  location: MyString
+  description: MyText
+  valid: 2014-02-21
+
+two:
+  name: MyString
+  discount: 1
+  branch: MyString
+  category: MyString
+  location: MyString
+  description: MyText
+  valid: 2014-02-21
