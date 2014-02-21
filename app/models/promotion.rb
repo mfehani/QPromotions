@@ -4,4 +4,5 @@ class Promotion < ActiveRecord::Base
   validates :name, :discount, :branch, :category, :location, :description, :presence => true
   validates :description, :length => {:maximum => 350}
   validates :name, :length => {:maximum => 50}
+  #unique
 end
