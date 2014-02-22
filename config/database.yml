@@ -3,13 +3,24 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
-development:
-  adapter: postgresql
-  host: locathost
-  username: maryamf@qatar.cmu.edu
-  database: app-dev
 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: floating-falls-3821
+  pool: 5
+  username: maryamf@qatar.cmu.edu
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: floating-falls-3821
+  pool: 5
+  username: maryamf@qatar.cmu.edu
+  password:
