@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 
 gem 'pg'
 
+gem "heroku", "~> 3.3.0"
+
 gem 'protected_attributes'
 
 gem 'devise', '3.0.0.rc'
