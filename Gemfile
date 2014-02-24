@@ -11,6 +11,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'rack-cors', :require => 'rack/cors'
+
 gem "heroku", "~> 3.3.0"
 
 gem 'protected_attributes'
