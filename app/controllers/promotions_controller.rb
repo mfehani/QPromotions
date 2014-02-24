@@ -27,16 +27,26 @@ class PromotionsController < ApplicationController
   # POST /promotions.json
   def create
     @promotion = Promotion.new(promotion_params)
-
+    name = params[:name]
+    respond_to do |format|
+      format.html
+      format.json{
+        render :response => {:name => name}
+      }
     respond_to do |format|
       if @promotion.save
         format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @promotion }
+        format.json { render action: 'show', status: :created, branch: @promotion }
       else
         format.html { render action: 'new' }
         format.json { render json: @promotion.errors, status: :unprocessable_entity }
       end
     end
+    if @promotion.save
+        render :json => { } # send back any data if necessary
+      else
+        render :json => { }, :status => 500
+      end
   end
 
   # PATCH/PUT /promotions/1
