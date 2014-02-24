@@ -3,7 +3,13 @@ source 'https://rubygems.org'
 
 # Use sqlite3 as the database for Active Record
 
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 gem "heroku", "~> 3.3.0"
 
