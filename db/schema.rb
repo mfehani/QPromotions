@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224124636) do
+ActiveRecord::Schema.define(version: 20140224171349) do
 
   create_table "promotions", force: true do |t|
     t.string   "name"
     t.integer  "discount"
     t.string   "branch"
     t.string   "category"
-    t.string   "location"
     t.text     "description"
     t.date     "end_date"
     t.datetime "created_at"

@@ -5,7 +5,6 @@ one:
   discount: 1
   branch: MyString
   category: MyString
-  location: MyString
   description: MyText
   end_date: 2014-02-24
 
@@ -14,6 +13,5 @@ two:
   discount: 1
   branch: MyString
   category: MyString
-  location: MyString
   description: MyText
   end_date: 2014-02-24
