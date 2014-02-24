@@ -18,7 +18,7 @@ class PromotionsControllerTest < ActionController::TestCase
 
   test "should create promotion" do
     assert_difference('Promotion.count') do
-      post :create, promotion: { branch: @promotion.branch, category: @promotion.category, description: @promotion.description, discount: @promotion.discount, location: @promotion.location, name: @promotion.name, valid: @promotion.valid }
+      post :create, promotion: { branch: @promotion.branch, category: @promotion.category, description: @promotion.description, discount: @promotion.discount, end_date: @promotion.end_date, location: @promotion.location, name: @promotion.name }
     end
 
     assert_redirected_to promotion_path(assigns(:promotion))
@@ -35,7 +35,7 @@ class PromotionsControllerTest < ActionController::TestCase
   end
 
   test "should update promotion" do
-    patch :update, id: @promotion, promotion: { branch: @promotion.branch, category: @promotion.category, description: @promotion.description, discount: @promotion.discount, location: @promotion.location, name: @promotion.name, valid: @promotion.valid }
+    patch :update, id: @promotion, promotion: { branch: @promotion.branch, category: @promotion.category, description: @promotion.description, discount: @promotion.discount, end_date: @promotion.end_date, location: @promotion.location, name: @promotion.name }
     assert_redirected_to promotion_path(assigns(:promotion))
   end
 

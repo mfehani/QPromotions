@@ -58,7 +58,7 @@ class PromotionsController < ApplicationController
   def destroy
     @promotion.destroy
     respond_to do |format|
-      format.html { redirect_to promotions_url, :notice => "Your promotion has been deleted." }
+      format.html { redirect_to promotions_url }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,6 @@ class PromotionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promotion_params
-      params.require(:promotion).permit(:name, :discount, :branch, :category, :location, :description, :valid)
+      params.require(:promotion).permit(:name, :discount, :branch, :category, :location, :description, :end_date)
     end
 end

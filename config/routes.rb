@@ -1,4 +1,5 @@
-QPromotions::Application.routes.draw do
+QPromotions::Application.routes.draw do  
+
   resources :promotions
   root to: "promotions#index"
 

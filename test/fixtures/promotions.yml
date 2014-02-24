@@ -7,7 +7,7 @@ one:
   category: MyString
   location: MyString
   description: MyText
-  valid: 2014-02-21
+  end_date: 2014-02-24
 
 two:
   name: MyString
@@ -16,4 +16,4 @@ two:
   category: MyString
   location: MyString
   description: MyText
-  valid: 2014-02-21
+  end_date: 2014-02-24
