@@ -9,7 +9,7 @@
       <th>Category</th>
       <th>Location</th>
       <th>Description</th>
-      <th>Valid</th>
+      <th>Valid Date</th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,7 +25,7 @@
         <td><%= promotion.category %></td>
         <td><%= promotion.location %></td>
         <td><%= promotion.description %></td>
-        <td><%= promotion.valid %></td>
+        <td><%= promotion.valid_date %></td>
         <td><%= link_to 'Show', promotion %></td>
         <td><%= link_to 'Edit', edit_promotion_path(promotion) %></td>
         <td><%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
