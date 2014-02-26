@@ -27,7 +27,6 @@ class PromotionsController < ApplicationController
   # POST /promotions.json
   def create
     @promotion = Promotion.new(promotion_params)
-
     respond_to do |format|
       if @promotion.save
         format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
