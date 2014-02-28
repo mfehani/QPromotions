@@ -1,5 +1,5 @@
 class Promotion < ActiveRecord::Base
- # attr_accessible :name, :discount, :branch, :category, :description, :end_date
+  attr_accessible :name, :discount, :branch, :category, :description, :end_date
   
  # validates :name, :discount, :branch, :category, :description, :presence => true
 #  validates :description, :length => {:maximum => 350}
