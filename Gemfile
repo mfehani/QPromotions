@@ -11,6 +11,11 @@ group :production do
   gem 'pg'
 end
 
+# Gemfile
+gem 'rabl'
+# Also add either `oj` or `yajl-ruby` as the JSON parser
+gem 'oj'
+
 gem 'rack-cors', :require => 'rack/cors'
 
 gem "heroku", "~> 3.3.0"
