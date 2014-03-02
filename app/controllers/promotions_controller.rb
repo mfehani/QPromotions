@@ -5,6 +5,7 @@ class PromotionsController < ApplicationController
   # GET /promotions.json
   def index
     @promotions = Promotion.all
+    format.json { render json: @name }
   end
 
   # GET /promotions/1
