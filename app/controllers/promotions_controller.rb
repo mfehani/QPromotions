@@ -5,12 +5,14 @@ class PromotionsController < ApplicationController
   # GET /promotions.json
   def index
     @promotions = Promotion.all
+    format.json { render action: 'show', status: :created, branch: @promotion }
   end
 
   # GET /promotions/1
   # GET /promotions/1.json
   def show
     @promotion = Promotion.find(params[:id])
+    format.json { render action: 'show', status: :created, branch: @promotion }
   end
 
   # GET /promotions/new
