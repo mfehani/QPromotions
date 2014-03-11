@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @promotion_branch.branch_id %>
+</p>
+
+<p>
+  <strong>Promotion:</strong>
+  <%= @promotion_branch.promotion_id %>
+</p>
+
+<%= link_to 'Edit', edit_promotion_branch_path(@promotion_branch) %> |
+<%= link_to 'Back', promotion_branches_path %>

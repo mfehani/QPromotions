@@ -1,0 +1,29 @@
+<h1>Listing promotion_branches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Branch</th>
+      <th>Promotion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promotion_branches.each do |promotion_branch| %>
+      <tr>
+        <td><%= promotion_branch.branch_id %></td>
+        <td><%= promotion_branch.promotion_id %></td>
+        <td><%= link_to 'Show', promotion_branch %></td>
+        <td><%= link_to 'Edit', edit_promotion_branch_path(promotion_branch) %></td>
+        <td><%= link_to 'Destroy', promotion_branch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promotion branch', new_promotion_branch_path %>

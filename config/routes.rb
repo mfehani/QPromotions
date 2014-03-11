@@ -1,8 +1,18 @@
 QPromotions::Application.routes.draw do  
   
-  resources :tags
+  resources :promotion_tags
+
+  resources :promotioncategories
+
+  resources :categories
+
+  resources :promotion_branches
+
+  resources :branches
 
   resources :users
+
+  resources :tags
 
   resources :promotions
   root to: "promotions#index"

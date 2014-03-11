@@ -1,0 +1,29 @@
+<h1>Listing promotioncategories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Promotion</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promotioncategories.each do |promotioncategory| %>
+      <tr>
+        <td><%= promotioncategory.promotion_id %></td>
+        <td><%= promotioncategory.category_id %></td>
+        <td><%= link_to 'Show', promotioncategory %></td>
+        <td><%= link_to 'Edit', edit_promotioncategory_path(promotioncategory) %></td>
+        <td><%= link_to 'Destroy', promotioncategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promotioncategory', new_promotioncategory_path %>

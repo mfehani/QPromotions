@@ -1,0 +1,25 @@
+<%= form_for(@promotion_branch) do |f| %>
+  <% if @promotion_branch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@promotion_branch.errors.count, "error") %> prohibited this promotion_branch from being saved:</h2>
+
+      <ul>
+      <% @promotion_branch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :branch_id %><br>
+    <%= f.number_field :branch_id %>
+  </div>
+  <div class="field">
+    <%= f.label :promotion_id %><br>
+    <%= f.number_field :promotion_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

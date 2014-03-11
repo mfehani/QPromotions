@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309125129) do
+ActiveRecord::Schema.define(version: 20140310145206) do
+
+  create_table "branches", force: true do |t|
+    t.string   "name"
+    t.integer  "vendor_id"
+    t.integer  "promotion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promotion_branches", force: true do |t|
+    t.integer  "branch_id"
+    t.integer  "promotion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promotion_tags", force: true do |t|
+    t.integer  "promotion_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promotioncategories", force: true do |t|
+    t.integer  "promotion_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "promotions", force: true do |t|
     t.string   "name"
@@ -22,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140309125129) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "tags", force: true do |t|
@@ -31,8 +67,14 @@ ActiveRecord::Schema.define(version: 20140309125129) do
   end
 
   create_table "users", force: true do |t|
+    t.integer  "type"
     t.string   "name"
     t.string   "email"
+    t.date     "dob"
+    t.string   "community"
+    t.string   "nationality"
+    t.string   "address"
+    t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
