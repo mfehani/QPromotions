@@ -4,8 +4,6 @@ QPromotions::Application.routes.draw do
 
   resources :promotion_tags
 
-  resources :promotioncategories
-
   resources :categories
 
   resources :promotion_branches
