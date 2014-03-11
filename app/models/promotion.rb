@@ -1,6 +1,7 @@
 class Promotion < ActiveRecord::Base
   has_one :user
-  has_many :tags, :branches
+  has_many :tags
+  has_many :branches
   attr_accessible :name, :discount, :description, :end_date, :user_id, :branch_id
   
   
