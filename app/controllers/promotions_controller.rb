@@ -1,5 +1,7 @@
 class PromotionsController < ApplicationController
   before_action :set_promotion, only: [:show, :edit, :update, :destroy]
+  #devise gem<authentication , cancan gem<authorization
+  
 
   # GET /promotions
   # GET /promotions.json
@@ -39,6 +41,11 @@ class PromotionsController < ApplicationController
     end
   end
 
+  def gettags
+    @promotion = Promotion.find(params[:id]) #?id=4
+    
+    
+  end
   # PATCH/PUT /promotions/1
   # PATCH/PUT /promotions/1.json
   def update

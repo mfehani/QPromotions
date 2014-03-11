@@ -1,5 +1,7 @@
 QPromotions::Application.routes.draw do  
   
+  resources :promotion_categories
+
   resources :promotion_tags
 
   resources :promotioncategories
@@ -15,8 +17,12 @@ QPromotions::Application.routes.draw do
   resources :tags
 
   resources :promotions
+  
   root to: "promotions#index"
   get '/new' => "promotions#create"
+  
+  get '/gettags' => "promotions#gettags"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

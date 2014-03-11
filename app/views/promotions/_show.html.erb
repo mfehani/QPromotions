@@ -32,9 +32,7 @@
 
 <p>
   <strong>Tags:</strong>
-  <% for i in @promotion.tags do %>
-  <%=	i.name %>
- <% end %>
+  <%= @promotion.tags.first.name%>
 </p>
 
 <%= link_to 'Edit', edit_promotion_path(@promotion) %> |
