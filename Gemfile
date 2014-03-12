@@ -11,6 +11,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'bcrypt-ruby', :require => 'bcrypt' 
+
 # Gemfile
 gem 'rabl'
 # Also add either `oj` or `yajl-ruby` as the JSON parser

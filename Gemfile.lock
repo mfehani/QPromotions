@@ -145,6 +145,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bcrypt-ruby
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
   heroku (~> 3.3.0)
