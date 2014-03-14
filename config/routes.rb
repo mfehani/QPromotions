@@ -1,5 +1,7 @@
 QPromotions::Application.routes.draw do  
   
+  devise_for :users
+  
   resources :promotion_categories
 
   resources :promotion_tags
@@ -10,11 +12,15 @@ QPromotions::Application.routes.draw do
 
   resources :branches
 
-  resources :users
+  resources :users ,except: [:new, :create]
 
   resources :tags
 
   resources :promotions
+  
+ # get '/sign_out' => "devise/sessions#destroy"
+  
+  devise_scope :user do get '/sign_out' => "devise/sessions#destroy" end
   
   root to: "promotions#index"
   get '/new' => "promotions#create"
