@@ -1,5 +1,7 @@
 QPromotions::Application.routes.draw do  
   
+  resources :communities
+
   devise_for :users
   
   resources :promotion_categories

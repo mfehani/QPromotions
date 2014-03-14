@@ -3,6 +3,7 @@ class Promotion < ActiveRecord::Base
   has_many :tags
   has_many :branches
   has_many :categories
+  belongs_to :community
   attr_accessible :name, :discount, :description, :end_date, :user_id, :branch_id, :category_id
   
   
