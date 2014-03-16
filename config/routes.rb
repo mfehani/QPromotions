@@ -1,8 +1,6 @@
 QPromotions::Application.routes.draw do  
   
   resources :communities
-
-  devise_for :users
   
   resources :promotion_categories
 
@@ -21,8 +19,14 @@ QPromotions::Application.routes.draw do
   resources :promotions
   
  # get '/sign_out' => "devise/sessions#destroy"
+ 
+ devise_for :users
   
   devise_scope :user do get '/sign_out' => "devise/sessions#destroy" end
+  
+  devise_scope :user do get '/sign_up' => "devise/registrations#new" end
+    
+  devise_scope :user do get '/sign_in' => "devise/sessions#new" end  
   
   root to: "promotions#index"
   get '/new' => "promotions#create"
