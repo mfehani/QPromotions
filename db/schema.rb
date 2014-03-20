@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314101347) do
+ActiveRecord::Schema.define(version: 20140320103639) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20140314101347) do
     t.integer  "user_id"
     t.integer  "branch_id"
     t.integer  "category_id"
+    t.string   "pimage"
   end
 
   create_table "tags", force: true do |t|
@@ -77,10 +78,8 @@ ActiveRecord::Schema.define(version: 20140314101347) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "type"
     t.string   "name"
     t.date     "dob"
-    t.string   "community"
     t.string   "nationality"
     t.string   "address"
     t.integer  "number"
@@ -96,6 +95,8 @@ ActiveRecord::Schema.define(version: 20140314101347) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "community_id"
+    t.string   "utype"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

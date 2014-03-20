@@ -11,13 +11,10 @@
 </p>
 
 <p>
-  <strong>Branch:</strong>
-   <%=	@promotion.branches.first.name %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-   <%=	@promotion.categories.first.name %>
+  <strong>Community:</strong>
+  <% for i in @user.community do %>
+  <%=	i.community %>
+ <% end %>
 </p>
 
 <p>
@@ -35,6 +32,11 @@
   <% for i in @promotion.tags do %>
   <%=	i.name %>
  <% end %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @promotion.pimage_url.to_s %>
 </p>
 
 <%= link_to 'Edit', edit_promotion_path(@promotion) %> |

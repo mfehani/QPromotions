@@ -11,6 +11,9 @@ group :production do
   gem 'pg'
 end
 
+gem 'simple_form'
+
+gem 'carrierwave'
 # Gemfile
 gem 'rabl'
 # Also add either `oj` or `yajl-ruby` as the JSON parser

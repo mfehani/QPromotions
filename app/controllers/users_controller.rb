@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find_by_authentication_token(params[:id])
+    @user = User.find(params[:id])
     @self = current_user.try(:id) == @user.id
+  #  @community=community.new
   end
 
   # GET /users/1/edit
@@ -34,7 +35,9 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  def communityt
+    @user=User.find(params[:id])
+  end
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy

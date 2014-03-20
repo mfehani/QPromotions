@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  attr_accessible :type, :name, :email, :dob, :community, :nationality, :address, :number, :password, :password_confirmation
+  attr_accessible :utype, :name, :email, :dob, :nationality, :address, :number, :password, :password_confirmation, :community_id
   has_many :promotions
   belongs_to :community
 end

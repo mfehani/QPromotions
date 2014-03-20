@@ -4,7 +4,6 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  # my custom fields are :name, :heard_how
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:name, :dob, :community, :nationality, :address, :number,
@@ -15,5 +14,7 @@ class User::RegistrationsController < Devise::RegistrationsController
         :email, :password, :password_confirmation, :current_password)
     end
   end
+  
+
 
 end

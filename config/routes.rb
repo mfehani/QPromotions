@@ -24,9 +24,9 @@ QPromotions::Application.routes.draw do
   
   devise_scope :user do get '/sign_out' => "devise/sessions#destroy" end
   
-  devise_scope :user do get '/sign_up' => "devise/registrations#new" end
+  #devise_scope :user do get '/sign_up' => "devise/registrations#new" end
     
-  devise_scope :user do get '/sign_in' => "devise/sessions#new" end  
+ # devise_scope :user do get '/sign_in' => "devise/sessions#new" end  
   
   root to: "promotions#index"
   get '/new' => "promotions#create"
