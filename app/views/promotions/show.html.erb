@@ -10,12 +10,8 @@
   <%= @promotion.discount %>
 </p>
 
-<p>
-  <strong>Community:</strong>
-  <% for i in @user.community do %>
-  <%=	i.community %>
- <% end %>
-</p>
+
+
 
 <p>
   <strong>Description:</strong>
@@ -29,9 +25,8 @@
 
 <p>
   <strong>Tags:</strong>
-  <% for i in @promotion.tags do %>
-  <%=	i.name %>
- <% end %>
+  <%= @promotion.promotion_tags.tag_id %>
+
 </p>
 
 <p>

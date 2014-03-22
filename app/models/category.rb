@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  belongs_to :promotions
-  has_many :promotions
+  has_many :promotion_categories
+  has_many :promotions, :through => :promotion_categories
   attr_accessible :name, :promotion_id
 end

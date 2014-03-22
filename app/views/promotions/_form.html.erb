@@ -28,6 +28,15 @@
     <%= f.label :end_date %><br>
     <%= f.date_select :end_date %>
   </div>
+  
+  <div class="field">
+    <% for category in Category.find(:all) %>
+	<div>
+	<%= check_box_tag "promotion[category_ids][]", category.id, @promotion.categories.include?(category)%>
+    <%= category.name %>
+	</div>
+	<% end %>
+  </div>
   <p>
 
     <%= f.file_field :pimage %>
