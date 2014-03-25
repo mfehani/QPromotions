@@ -6,6 +6,7 @@ class Promotion < ActiveRecord::Base
   belongs_to :community
   attr_accessible :name, :discount, :description, :end_date, :user_id, :pimage
   mount_uploader :pimage, PimageUploader
+  accepts_nested_attributes_for :tags
   
   
  # validates :name, :discount, :branch, :category, :description, :presence => true

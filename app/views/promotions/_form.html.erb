@@ -37,6 +37,10 @@
 	</div>
 	<% end %>
   </div>
+  <div class="field">
+    <%= f.label :tag %><br>
+    <%= f.text_area @promotion.tag.name %>
+  </div>
   <p>
 
     <%= f.file_field :pimage %>

@@ -30,8 +30,10 @@ class PromotionsController < ApplicationController
   # POST /promotions.json
   def create
     @promotion = Promotion.new(promotion_params)
+    @tag= tag.new(tag_params)
     respond_to do |format|
       if @promotion.save
+        @promotion.tags << @tag
         format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
         format.json { render action: 'show', status: :created, branch: @promotion }
       else

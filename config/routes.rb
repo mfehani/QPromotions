@@ -12,7 +12,7 @@ QPromotions::Application.routes.draw do
 
   resources :branches
 
-  resources :users ,except: [:new, :create]
+  resources :users ,except: [:new, :create, :edit]
 
   resources :tags
 

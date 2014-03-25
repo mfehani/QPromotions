@@ -13,6 +13,7 @@ class User::RegistrationsController < Devise::RegistrationsController
       u.permit(:name, :dob, :community, :nationality, :address, :number,
         :email, :password, :password_confirmation, :current_password)
     end
+    
   end
   
 
