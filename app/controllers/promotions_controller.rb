@@ -30,17 +30,43 @@ class PromotionsController < ApplicationController
   # POST /promotions.json
   def create
     @promotion = Promotion.new(promotion_params)
-    @tag= tag.new(tag_params)
     respond_to do |format|
       if @promotion.save
-        @promotion.tags << @tag
+        for category in params[:categories_to_be_added]
+          c=Category.find(category)
+          @promotion.categories << c            
+        end
+      #  for branch in params[:branches_to_be_added]
+       #   b=Branch.find_by_name(branch)
+        #  @promotion.branches << b
+      #  end
+        #in here
+        for tag in params[:tags_to_be_added].split
+          x=Tag.find_by_name(tag)
+          if x.nil?
+            @tag= Tag.new(name: tag)
+            @promotion.tags << @tag
+          else
+            @promotion.tags << x
+          end
+        end
+        #for tag in incoming tags
+        #create a new tag
+        #add to promotion
+        #else
+        #just add it to the promotions
+        #end
         format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
-        format.json { render action: 'show', status: :created, branch: @promotion }
+        format.json { render action: 'show', status: :created, branch: @promotion } #status jbuilder
       else
         format.html { render action: 'new' }
         format.json { render json: @promotion.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def search
+    
   end
 
   def gettags

@@ -24,6 +24,26 @@
 </p>
 
 
+<p>
+<strong> Tags: </strong>
+<% for i in @promotion.tags %>
+<%= i.name %>   <br>
+<% end %>
+</p>
+
+<p>
+<strong> Categories: </strong>
+<% for j in @promotion.categories %>
+<%= j.name %>   <br>
+<% end %>
+</p>
+
+<p>
+<strong> Branches: </strong>
+<% for m in @promotion.branches %>
+<%= m.name %>   <br>
+<% end %>
+</p>
 
 <p>
   <strong>Image:</strong>

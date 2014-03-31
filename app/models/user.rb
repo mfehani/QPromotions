@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :utype, :name, :email, :dob, :nationality, :address, :number, :password, :password_confirmation, :community_id
   has_many :promotions
+  has_many :branches
   belongs_to :community
 end
