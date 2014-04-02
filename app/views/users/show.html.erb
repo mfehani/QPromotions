@@ -34,7 +34,17 @@
   <strong>Number:</strong>
   <%= @user.number %>
 </p>
-
+<p>
+<strong> Branches: </strong>
+<% for m in @user.branches %>
+<%= m.name %>   <br>
+<% end %>
+</p>
+<strong> My Promotions: </strong>
+<% for i in @user.promotions %>
+<%= i.name %>
+<br>
+<% end %>
 <p>
   <strong>Community:</strong>
 
@@ -42,5 +52,5 @@
 
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%#= link_to 'Edit',  edit_user_registration(@user) %> |
 <%= link_to 'Back', users_path %>

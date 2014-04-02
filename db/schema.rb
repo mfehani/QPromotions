@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320103639) do
+ActiveRecord::Schema.define(version: 20140402105009) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
     t.integer  "vendor_id"
+    t.integer  "promotion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "user_id"
+  end
+
+  create_table "branches_promotions", force: true do |t|
+    t.integer  "branch_id"
     t.integer  "promotion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,33 +36,19 @@ ActiveRecord::Schema.define(version: 20140320103639) do
     t.integer  "promotion_id"
   end
 
-  create_table "communities", force: true do |t|
-    t.string   "name"
-    t.integer  "promotion_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "promotion_branches", force: true do |t|
-    t.integer  "branch_id"
-    t.integer  "promotion_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "promotion_categories", force: true do |t|
+  create_table "categories_promotions", force: true do |t|
     t.integer  "promotion_id"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "promotion_tags", force: true do |t|
+  create_table "communities", force: true do |t|
+    t.string   "name"
     t.integer  "promotion_id"
-    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "promotions", force: true do |t|
@@ -70,11 +64,17 @@ ActiveRecord::Schema.define(version: 20140320103639) do
     t.string   "pimage"
   end
 
+  create_table "promotions_tags", force: true do |t|
+    t.integer  "promotion_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "promotion_id"
   end
 
   create_table "users", force: true do |t|

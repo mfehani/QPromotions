@@ -29,17 +29,20 @@ class PromotionsController < ApplicationController
   # POST /promotions
   # POST /promotions.json
   def create
+    
     @promotion = Promotion.new(promotion_params)
+  #  @promotion.user =current_user
+  @promotion.user_id=current_user.id
     respond_to do |format|
       if @promotion.save
         for category in params[:categories_to_be_added]
           c=Category.find(category)
           @promotion.categories << c            
         end
-      #  for branch in params[:branches_to_be_added]
-       #   b=Branch.find_by_name(branch)
-        #  @promotion.branches << b
-      #  end
+        for branch in params[:branches_to_be_added]
+          b=Branch.find(branch)
+          @promotion.branches << b
+        end
         #in here
         for tag in params[:tags_to_be_added].split
           x=Tag.find_by_name(tag)
@@ -66,7 +69,18 @@ class PromotionsController < ApplicationController
   end
 
   def search
-    
+    @tags = Tag.search params[:search]
+    @promotions = Array.new
+    for i in @tags
+      puts i.promotions.first.name
+      for j in i.promotions
+        @promotions << j
+        puts j.name
+      end
+    end
+    puts "blah"
+    puts @promotions.first
+    puts "blaaaah"
   end
 
   def gettags

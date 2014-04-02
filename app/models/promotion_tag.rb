@@ -1,4 +1,4 @@
-class PromotionTag < ActiveRecord::Base
+class PromotionsTag < ActiveRecord::Base
   belongs_to :promotion
   belongs_to :tag
   attr_accessible :promotion_id, :tag_id

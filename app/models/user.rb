@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :utype, :name, :email, :dob, :nationality, :address, :number, :password, :password_confirmation, :community_id
-  has_many :promotions
   has_many :branches
+  has_many :promotions
   belongs_to :community
+  accepts_nested_attributes_for :branches
 end

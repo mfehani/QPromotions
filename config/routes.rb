@@ -24,7 +24,7 @@ QPromotions::Application.routes.draw do
   
   devise_scope :user do get '/sign_out' => "devise/sessions#destroy" end
   
-  #devise_scope :user do get '/sign_up' => "devise/registrations#new" end
+  devise_scope :user do get '/sign_up' => "devise/registrations#new" end
     
    devise_scope :user do get '/sign_in' => "devise/sessions#new" end  
   
@@ -32,6 +32,8 @@ QPromotions::Application.routes.draw do
   get '/new' => "promotions#create"
   
   get '/gettags' => "promotions#gettags"
+  
+  get '/search' => "promotions#search"
   
 
   # The priority is based upon order of creation: first created -> highest priority.

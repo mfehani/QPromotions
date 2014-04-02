@@ -42,12 +42,14 @@
     <%= text_field_tag(:tags_to_be_added)%>
   </div>
   <div class="field">
+	   <%= f.label :categories %>
 	  <% for i in Category.all %>
 	  <%= f.label i.name %>
     <%= check_box_tag('categories_to_be_added[]', i.id)%>
 	<%end %>
   </div>
   <div class="field">
+	   <%= f.label :branches %>
   	  <% for j in Branch.all %>
   	  <%= f.label j.name %>
       <%= check_box_tag('branches_to_be_added[]', j.id)%>

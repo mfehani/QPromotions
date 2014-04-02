@@ -18,7 +18,10 @@
     </div>
     <div class="field">
 	  <%= f.input :community, :collection => Community.all%>
-      
+    </div>
+    <div class="field">
+  	<%= f.label :branches %>
+      <%= text_field_tag(:branches_to_be_added)%>
     </div>
     <div class="field">
       <%= f.label :nationality %><br>

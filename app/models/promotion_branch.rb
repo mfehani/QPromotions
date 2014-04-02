@@ -1,4 +1,4 @@
-class PromotionBranch < ActiveRecord::Base
+class PromotionsBranch < ActiveRecord::Base
   belongs_to :promotion
   belongs_to :branch
   attr_accessible :branch_id, :promotion_id

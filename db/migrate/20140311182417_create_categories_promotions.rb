@@ -1,6 +1,6 @@
-class CreatePromotionCategories < ActiveRecord::Migration
+class CreateCategoriesPromotions < ActiveRecord::Migration
   def change
-    create_table :promotion_categories do |t|
+    create_table :categories_promotions do |t|
       t.integer :promotion_id
       t.integer :category_id
 
