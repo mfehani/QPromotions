@@ -24,6 +24,8 @@ module QPromotions
     
     config.assets.initialize_on_precompile = false
     
+    config.middleware.insert_before Warden::Manager, Rack::Cors
+    
     config.middleware.use Rack::Cors do
           allow do
             origins '*'

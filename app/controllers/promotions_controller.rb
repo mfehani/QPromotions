@@ -32,7 +32,7 @@ class PromotionsController < ApplicationController
     
     @promotion = Promotion.new(promotion_params)
   #  @promotion.user =current_user
-  @promotion.user_id=current_user.id
+#  @promotion.user_id=current_user.id
     respond_to do |format|
       if @promotion.save
         for category in params[:categories_to_be_added]
@@ -44,7 +44,7 @@ class PromotionsController < ApplicationController
           @promotion.branches << b
         end
         #in here
-        for tag in params[:tags_to_be_added].split
+        for tag in params[:tags_to_be_added].split(',')
           x=Tag.find_by_name(tag)
           if x.nil?
             @tag= Tag.new(name: tag)
