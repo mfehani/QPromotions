@@ -35,15 +35,19 @@ class PromotionsController < ApplicationController
 #  @promotion.user_id=current_user.id
     respond_to do |format|
       if @promotion.save
+        puts params[:categories_to_be_added]
         for category in params[:categories_to_be_added]
+          
           c=Category.find(category)
           @promotion.categories << c            
         end
+      #  puts params[:branches_to_be_added]
         for branch in params[:branches_to_be_added]
           b=Branch.find(branch)
           @promotion.branches << b
         end
         #in here
+      #  puts params[:tags_to_be_added]
         for tag in params[:tags_to_be_added].split(',')
           x=Tag.find_by_name(tag)
           if x.nil?
@@ -120,6 +124,6 @@ class PromotionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promotion_params
-      params.require(:promotion).permit(:name, :discount, :branch, :category, :description, :end_date)
+      params.require(:promotion).permit(:name, :discount, :description, :end_date, :categories_to_be_added, :branches_to_be_added, :tags_to_be_added)
     end
 end

@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @self = current_user.try(:id) == @user.id
-  #  @community=community.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @user.as_json(only: [:type, :name, :email, :dob, :community, :nationality, :address, :number], include: [branches: {only:[:name] } ] ) }
+    end
   end
 
   # GET /users/1/edit
