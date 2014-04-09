@@ -11,7 +11,7 @@ class Promotion < ActiveRecord::Base
   accepts_nested_attributes_for :categories
   
   
- # validates :name, :discount, :branch, :category, :description, :presence => true
-#  validates :description, :length => {:maximum => 350}
- # validates :name, :length => {:maximum => 50}
+  validates :name, :discount, :description, :presence => true
+  validates :description, :length => {:maximum => 350}
+  validates :name, :length => {:maximum => 50}
 end

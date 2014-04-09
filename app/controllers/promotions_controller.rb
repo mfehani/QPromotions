@@ -37,13 +37,14 @@ class PromotionsController < ApplicationController
       if @promotion.save
         puts params[:categories_to_be_added]
         for category in params[:categories_to_be_added]
-          
+         # c=Category.find_by_name(category)
           c=Category.find(category)
           @promotion.categories << c            
         end
       #  puts params[:branches_to_be_added]
         for branch in params[:branches_to_be_added]
-          b=Branch.find(branch)
+        #  b=Branch.find_by_name(branch)
+         b=Branch.find(branch)
           @promotion.branches << b
         end
         #in here
@@ -82,6 +83,7 @@ class PromotionsController < ApplicationController
         puts j.name
       end
     end
+    
     puts "blah"
     puts @promotions.first
     puts "blaaaah"
