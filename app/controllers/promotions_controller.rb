@@ -32,6 +32,7 @@ class PromotionsController < ApplicationController
     
     @promotion = Promotion.new(promotion_params)
   #  @promotion.user =current_user
+  
 #  @promotion.user_id=current_user.id
     respond_to do |format|
       if @promotion.save
@@ -68,7 +69,7 @@ class PromotionsController < ApplicationController
         format.json { render action: 'show', status: :created, branch: @promotion } #status jbuilder
       else
         format.html { render action: 'new' }
-        format.json { render json: @promotion.errors, status: :unprocessable_entity }
+        format.json { render :json => { success: false, message: 'Error' }, status: 401 }
       end
     end
   end
@@ -126,6 +127,6 @@ class PromotionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promotion_params
-      params.require(:promotion).permit(:name, :discount, :description, :end_date, :categories_to_be_added, :branches_to_be_added, :tags_to_be_added)
+      params.require(:promotion).permit(:name, :discount, :description, :end_date, :categories_to_be_added, :branches_to_be_added, :tags_to_be_added, :user_id)
     end
 end

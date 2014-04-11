@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Tags:</strong>
+  <% for i in @user.promotions do %>
+  <%=	i.name %>
+ <% end %>
+</p>
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>
