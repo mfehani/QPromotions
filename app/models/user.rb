@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :community
   accepts_nested_attributes_for :branches
   
-  validates :name, :email, :presence => true
-  validates :nationality, :length =>{:minimum => 3}
-  validates :name, :length => {:maximum => 50}
+#  validates :name, :email, :presence => true
+ # validates :nationality, :length =>{:minimum => 3}
+#  validates :name, :length => {:maximum => 50}
 end
