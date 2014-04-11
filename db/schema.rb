@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407104736) do
+ActiveRecord::Schema.define(version: 20140402105009) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -51,8 +51,18 @@ ActiveRecord::Schema.define(version: 20140407104736) do
     t.integer  "user_id"
   end
 
-# Could not dump table "promotions" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "promotions", force: true do |t|
+    t.string   "name"
+    t.integer  "discount"
+    t.text     "description"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "branch_id"
+    t.integer  "category_id"
+    t.string   "pimage"
+  end
 
   create_table "promotions_tags", force: true do |t|
     t.integer  "promotion_id"
