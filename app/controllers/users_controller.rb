@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @self = current_user.try(:id) == @user.id
     respond_to do |format|
       format.html
-      format.json { render json: @user.as_json(only: [:type, :name, :email, :dob, :community, :nationality, :address, :number], include: [promotions: {only:[:name, :discount, :description, :end_date ] } ] ) }
+      format.json { render json: @user.as_json(only: [:type, :name, :email, :dob, :community, :nationality, :address, :number], include: [promotions: {only:[:name, :discount, :description, :end_date, :pimage ] } ] ) }
     end
   end
 
