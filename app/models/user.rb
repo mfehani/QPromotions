@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :branches
   
   validates :name, :email, :presence => true
-  validates :nationality, :length =>{:minimum => 3}
-  validates :name, :length => {:maximum => 50}
+ # validates :nationality, :length =>{:minimum => 3}
+ # validates :name, :length => {:maximum => 50}
 end

@@ -69,7 +69,7 @@ class PromotionsController < ApplicationController
         format.json { render action: 'show', status: :created, branch: @promotion } #status jbuilder
       else
         format.html { render action: 'new' }
-        format.json { render :json => { success: false, message: 'Error' }, status: 401 }
+        format.json { render json: { success: false, message: 'Error' }, status: 401 }
       end
     end
   end

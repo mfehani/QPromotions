@@ -30,7 +30,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:name, :dob, :community, :nationality, :address, :number,
+      u.permit(:utype, :name, :dob, :community, :nationality, :address, :number,
         :email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|

@@ -7,6 +7,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem "paperclip", "~> 4.1"
+
 group :production do
   gem 'pg'
 end
