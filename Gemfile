@@ -13,7 +13,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'fog', "~> 1.3.1"
+gem 'fog'
+
+gem "mini_magick"
 
 gem 'simple_form'
 
@@ -26,7 +28,6 @@ gem 'oj'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem "heroku", "~> 3.3.0"
-
 
 gem 'protected_attributes'
 
