@@ -100,6 +100,29 @@ class PromotionsController < ApplicationController
   def update
     respond_to do |format|
       if @promotion.update(promotion_params)
+          puts params[:categories_to_be_added]
+          for category in params[:categories_to_be_added]
+           # c=Category.find_by_name(category)
+            c=Category.find(category)
+            @promotion.categories << c            
+          end
+        #  puts params[:branches_to_be_added]
+          for branch in params[:branches_to_be_added]
+          #  b=Branch.find_by_name(branch)
+           b=Branch.find(branch)
+            @promotion.branches << b
+          end
+          #in here
+        #  puts params[:tags_to_be_added]
+          for tag in params[:tags_to_be_added].split(',')
+            x=Tag.find_by_name(tag)
+            if x.nil?
+              @tag= Tag.new(name: tag)
+              @promotion.tags << @tag
+            else
+              @promotion.tags << x
+            end
+          end
         format.html { redirect_to @promotion, notice: 'Promotion was successfully updated.' }
         format.json { head :no_content }
       else

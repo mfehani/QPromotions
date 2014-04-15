@@ -1,4 +1,4 @@
-class User::RegistrationsController < Devise::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController
 
   before_filter :configure_permitted_parameters
 
@@ -7,7 +7,7 @@ class User::RegistrationsController < Devise::RegistrationsController
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
-      for branch in params[:branches_to_be_added].split
+      for branch in params[:branches_to_be_added].split(',')
         b=Branch.new(name: branch)
         @user.branches << b
       end
@@ -30,7 +30,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:utype, :name, :dob, :community, :nationality, :address, :number,
+      u.permit(:utype, :name, :branches_to_be_added, :dob, :community, :nationality, :address, :number,
         :email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
