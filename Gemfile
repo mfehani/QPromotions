@@ -13,6 +13,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'fog', "~> 1.3.1"
+
 gem 'simple_form'
 
 gem 'carrierwave'
