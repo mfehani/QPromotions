@@ -4,12 +4,13 @@ class Promotion < ActiveRecord::Base
   has_and_belongs_to_many :branches
   has_many :categories
   belongs_to :community
-  attr_accessible :name, :discount, :description, :end_date, :user_id, :pimage#, :branches_to_be_added, :categories_to_be_added, :tags_to_be_added
-  mount_uploader :pimage, PimageUploader
+  attr_accessible :name, :discount, :description, :end_date, :user_id, :avatar#, :pimage#, :branches_to_be_added, :categories_to_be_added, :tags_to_be_added
+ # mount_uploader :pimage, PimageUploader
   accepts_nested_attributes_for :tags
   accepts_nested_attributes_for :branches
   accepts_nested_attributes_for :categories
-  
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   
   validates :name, :discount, :description, :presence => true
   validates :description, :length => {:maximum => 350}

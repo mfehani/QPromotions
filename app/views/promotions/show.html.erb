@@ -47,7 +47,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @promotion.pimage_url.to_s %>
+  <%= image_tag @promotion.avatar.url %>
+  <%= image_tag @promotion.avatar.url(:medium) %>
+  <%= image_tag @promotion.avatar.url(:thumb) %>
 </p>
 
 <%= link_to 'Edit', edit_promotion_path(@promotion) %> |
