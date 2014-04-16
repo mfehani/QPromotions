@@ -34,6 +34,7 @@ class PromotionsController < ApplicationController
   #  @promotion.user =current_user
   
 #  @promotion.user_id=current_user.id
+ #   @promotion.remote_file =params[:pimage]
     respond_to do |format|
       if @promotion.save
         puts params[:categories_to_be_added]
