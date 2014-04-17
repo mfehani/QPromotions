@@ -2,11 +2,16 @@ class RegistrationsController < Devise::RegistrationsController
 
   before_filter :configure_permitted_parameters
 
+  def new
+    super
+  end
+
   def create
     build_resource(sign_up_params)
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
+      puts "helloooo"
       for branch in params[:branches_to_be_added].split(',')
         b=Branch.new(name: branch)
         @user.branches << b
